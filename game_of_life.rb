@@ -1,5 +1,17 @@
 require 'pry'
 
+class Cell
+
+  attr_accessor :x, :y, :alive
+
+  def initialize(x=0, y=0)
+    @x = x
+    @y = y
+    @alive = alive
+    @alive = false
+  end
+end
+
 class World
 
   attr_accessor :rows, :columns, :grid, :live_neighbours
@@ -65,18 +77,6 @@ class World
     end
 
     return @live_neighbours
-  end
-end
-
-class Cell
-
-  attr_accessor :x, :y, :alive
-
-  def initialize(x=0, y=0)
-    @x = x
-    @y = y
-    @alive = alive
-    @alive = false
   end
 end
 
