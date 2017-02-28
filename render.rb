@@ -44,14 +44,6 @@ class Render
     end
   end
 
-  def remove_boxes
-    if @boxes.count >0
-      @boxes.each do |box|
-        @scene_ortho.remove(box)
-      end
-    end
-  end
-
   def get_start_points
   add_boxes
   @game.next_generation
