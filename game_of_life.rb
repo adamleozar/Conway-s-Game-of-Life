@@ -19,69 +19,52 @@ class World
     #north
     if cell.y>0
       possibility = self.grid[cell.y-1][cell.x]
-      if possibility.alive == true
-        @live_neighbours << possibility
-      end
+      @live_neighbours << possibility if possibility.alive == true
     end
 
     #south
     if cell.y<(rows-1)
       possibility = self.grid[cell.y+1][cell.x]
-      if possibility.alive == true
-        @live_neighbours << possibility
-      end
+      @live_neighbours << possibility if possibility.alive == true
     end
 
     #west
     if cell.x> 0
       possibility = self.grid[cell.y][cell.x-1]
-      if possibility.alive == true
-        @live_neighbours << possibility
-      end
+      @live_neighbours << possibility if possibility.alive == true
     end
 
     #east
     if (cell.x) < (columns-1)
       possibility = self.grid[cell.y][cell.x+1]
-      if possibility.alive == true
-        @live_neighbours << possibility
-      end
+      @live_neighbours << possibility if possibility.alive == true
     end
 
     #north east
     if (cell.y>0) && (cell.x<(columns-1))
       possibility = self.grid[cell.y-1][cell.x+1]
-      if possibility.alive == true
-        @live_neighbours << possibility
-      end
+      @live_neighbours << possibility if possibility.alive == true
     end
 
     #north west
     if (cell.y>0) && (cell.x> 0)
       possibility = self.grid[cell.y-1][cell.x-1]
-      if possibility.alive == true
-        @live_neighbours << possibility
-      end
+      @live_neighbours << possibility if possibility.alive == true
     end
 
     #south east
     if (cell.y<(rows-1)) && (cell.x<(columns-1))
       possibility = self.grid[cell.y+1][cell.x+1]
-      if possibility.alive == true
-        @live_neighbours << possibility
-      end
+      @live_neighbours << possibility if possibility.alive == true
     end
 
     #south west
     if (cell.y<(rows-1)) && ((cell.x> 0))
       possibility = self.grid[cell.y+1][cell.x-1]
-      if possibility.alive == true
-        @live_neighbours << possibility
-      end
+      @live_neighbours << possibility if possibility.alive == true
     end
 
     return @live_neighbours
-
   end
 end
 
